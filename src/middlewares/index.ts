@@ -2,13 +2,13 @@ import express from 'express';
 
 import {get, merge} from 'lodash';
 
-import { getUsersBySessionToken } from 'db/users';
+import { getUsersBySessionToken } from '../db/users';
 
 
 export const isAuthenticate = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
 
     try {
-        const sessionToken = req.cookies['COOKIE-AUTHw'];
+        const sessionToken = req.cookies['COOKIE-AUTH'];
         if(!sessionToken) {
             return res.sendStatus(403);
         } 
