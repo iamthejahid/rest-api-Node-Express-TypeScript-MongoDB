@@ -17,7 +17,7 @@ app.use(bodyparser.json());
 app.use((req, _, next) => {
     console.log(`[${new Date().toLocaleString()}]:[${req.method}] :  ${req.url}`);
     next();
-    console.log(_); 
+    // console.log(_); 
   });
 
 
@@ -28,7 +28,7 @@ server.listen(8080, () => {
     console.log("server running on http://localhost:8080/");
     });
 
-const MONGO_URL = "mongodb://localhost:27017";
+const MONGO_URL = "mongodb://localhost:27017/testv1";
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
